@@ -1,19 +1,20 @@
 import React from "react";
 import {
   BrowserRouter as Router,
-  // HashRouter,
+  HashRouter,
   Route,
   Switch,
   Redirect,
 } from "react-router-dom";
 import { About, Home, Contact, Gallery } from "../pages";
-import { ScrollToTop } from "./ScrollTopTop";
-
+// import { NavbarBar } from "./Navbar";
+import ScrollToTop from "../helpers/ScrollToTop";
 const Routes = () => {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <ScrollToTop>
         <main className="App">
+          {/* <NavbarBar /> */}
           <Switch>
             <Route exact={true} path={"/"}>
               <Home />
@@ -31,7 +32,7 @@ const Routes = () => {
           </Switch>
         </main>
       </ScrollToTop>
-    </Router>
+    </HashRouter>
   );
 };
 
